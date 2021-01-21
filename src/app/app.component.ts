@@ -1,10 +1,21 @@
 import { Component } from '@angular/core';
 
+import { PoMenuItem } from '@po-ui/ng-components';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'monitorEsocial';
+
+  readonly menus: Array<PoMenuItem> = [
+    { label: 'Home', action: this.onClick.bind(this) },
+    { label: 'Monitor eSocial', link: '/monitor' }
+  ];
+
+  private onClick() {
+    alert('Clicked in menu item')
+  }
+
 }
